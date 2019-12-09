@@ -1,7 +1,10 @@
 const express = require("express")
+const commentRouter = require("./comments")
 const db = require("../data/db")
 
 const router = express.Router()
+
+router.use("/:id/comments", commentRouter)
 
 router.get("/", (req, res) => {
   db.find()
